@@ -1,0 +1,297 @@
+<head>
+</head>
+
+<h1>Introduction to Virtual Reality with A-Frame</h1>
+Last updated: March 19, 2020<br><br>
+This tutorial will show you how to make your own interactive VR scene using A-Frame.<br><br>
+<img src="https://cdn.glitch.com/2693d0bd-10f3-4631-aa45-8a61112afe2c%2FScreen%20Shot%202019-08-08%20at%206.06.39%20PM.png?v=1565309326387">
+
+<h3>Setting up a glitch project</h3><br>
+1. Go to <a href="http://glitch.com">glitch.com</a><br><br>
+2. Click on “new project” and select “hello webpage”<br><br>
+3. Go into index.html. You can ignore the other files.<br><br>
+4. Delete all of the default content in index.html<br><br>
+
+<h3>Setting up a basic a-frame scene</h3>
+5. Start by adding head and body tags. Add the following code to index.html:<br>
+<div class="code">
+  &lt;head&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+6. Between the head tags, add a link to a-frame:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;<yellow>&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;</yellow><br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+7. Between the body tags, add a-frame scene tags:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;<yellow>&lt;a-scene&gt;<br>
+    &nbsp;&nbsp;&lt;/a-scene&gt;<br></yellow>
+  &lt;/body&gt;<br>
+</div><br><br>
+8. Between the scene tags, add an orange box:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;</yellow><br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+You can view your project by clicking on "Show" in the upper left corner of the page. In non-VR, you can use arrow keys to move. Click and drag the page to look around. It should look like this:<br><br>
+<img src="https://cdn.glitch.com/2693d0bd-10f3-4631-aa45-8a61112afe2c%2FScreen%20Shot%202019-08-08%20at%201.21.03%20PM.png?v=1565292108677">
+<br><br>
+9. Add a small blue sphere to your scene to the right of the box, and add a large red cone behind the box:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;</yellow><br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+10. Add a plane for the floor:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;</yellow><br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+Your webpage should now look like this:<br><br>
+<img src="https://cdn.glitch.com/2693d0bd-10f3-4631-aa45-8a61112afe2c%2FScreen%20Shot%202019-08-08%20at%206.12.05%20PM.png?v=1565309541762">
+<br><br>
+You can see how your project looks in VR by going to its URL in the browser in a VR headset.<br>
+In VR, you will not be able to move around yet.
+<br><br>
+
+<h3>Add the controller</h3>
+11. Add an entity to the scene with the ID "rig":
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;</yellow><br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+12. Add a camera between the rig entity tags:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-camera&gt;&lt;/a-camera&gt;</yellow><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+13. Add a controller between the rig entity tags:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-camera&gt;&lt;/a-camera&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-entity laser-controls&gt;&lt;/a-entity&gt;</yellow><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br>
+
+Now, when you go to your webpage in VR, you will be able to see the controller, and it will have a line coming out the front.
+<br><br>
+
+<h3>Add a checkpoint function</h3>
+14. Add some objects around the scene to act as checkpoints. You will move to their location when you click on them.
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="-2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -5"&gt;&lt;/a-box&gt;</yellow><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-camera&gt;&lt;/a-camera&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity laser-controls&gt;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+15. Between the head tags, add script tags. This is where the javascript will go:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &nbsp;&nbsp;<yellow>&lt;script&gt;<br>
+  &nbsp;&nbsp;&lt;/script&gt;</yellow><br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="-2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -5"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-camera&gt;&lt;/a-camera&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity laser-controls&gt;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br><br>
+16. Between the script tags, add the following function:
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &nbsp;&nbsp;&lt;script&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<yellow>AFRAME.registerComponent('checkpoint', {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init: function () {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var el = this.el;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.addEventListener('click', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector('#rig').object3D.position.x = el.object3D.position.x;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector('#rig').object3D.position.z = el.object3D.position.z;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;});<br></yellow>
+    &nbsp;&nbsp;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 0 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="-2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -5"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-camera&gt;&lt;/a-camera&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity laser-controls&gt;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;<br>
+</div><br>
+
+Now when you're in VR, you can move around your scene by clicking on the checkpoints.
+<br><br>
+17. Finally, to make checkpoints clickable in the non-VR browser, add
+<div class="code">
+  cursor="rayOrigin:mouse"
+</div><br>
+inside the initial scene tag, so it looks like this:
+<div class="code">
+  &lt;a-scene <yellow>cursor="rayOrigin:mouse"</yellow>&gt;
+</div><br><br>
+
+That concludes the tutorial. With less than 30 lines of code, you have made an interactive VR scene!
+<br>
+You can continue learning A-Frame by changing colors, shapes, and positions, adding objects and interactions to your scene, and checking out <a href="http://aframe.io">aframe.io</a>.
+
+<h3>Finished code</h3>
+<div class="code">
+  &lt;head&gt;<br>
+  &nbsp;&nbsp;&lt;script src="https://aframe.io/releases/0.9.2/aframe.min.js"&gt;&lt;/script&gt;<br>
+  &nbsp;&nbsp;&lt;script&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;AFRAME.registerComponent('checkpoint', {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;init: function () {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var el = this.el;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;el.addEventListener('click', function () {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector('#rig').object3D.position.x = el.object3D.position.x;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.querySelector('#rig').object3D.position.z = el.object3D.position.z;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+    &nbsp;&nbsp;&lt;/script&gt;<br>
+  &lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &nbsp;&nbsp;&lt;a-scene cursor="rayOrigin:mouse"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box color="orange" position="0 .5 -4"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-sphere color="blue" scale=".2 .2 .2" position="3 .1 -4"&gt;&lt;/a-sphere&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-cone color="red" scale="4 4 4" position="-2 2 -8"&gt;&lt;/a-cone&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-plane color="lime" scale="5 5" rotation="-90 0 0" position="0 0 -4"&gt;&lt;/a-plane&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="-2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -1"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-box checkpoint color="purple" scale=".2 .2 .2" position="2 1 -5"&gt;&lt;/a-box&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity id="rig"&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-camera&gt;&lt;/a-camera&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a-entity laser-controls&gt;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a-entity&gt;<br>
+  &nbsp;&nbsp;&lt;/a-scene&gt;<br>
+  &lt;/body&gt;
+</div><br><br>
+For a slightly more advanced A-Frame example, check out 
+<a href="https://glitch.com/~crddsvr">this project</a>.<br>
+To learn more about A-Frame and VR, check out <a href="https://aframe.io/">aframe.io</a>.
+
+
+
+<style>
+  body{
+    padding:2em;
+    font-size:18px;
+  }
+  img{
+    width:50%;
+    border:1px solid black;
+  }
+  h3{
+    background-color:lavender;
+  }
+  yellow{
+    background-color:yellow;
+  }
+  .code{
+    padding:1em 2em 1em 2em;
+    background-color:f1f1f1;
+    font-family:monospace;
+    font-size:14px;
+  }
+</style>
