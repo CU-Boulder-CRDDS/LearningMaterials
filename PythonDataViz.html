@@ -1,0 +1,436 @@
+<head>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+  
+  <div id="trinket">
+    <button style="float:right;" onclick="closeTrinket()">Close Trinket</button>
+    <button id="sizeButton" style="float:left;" onclick="resize()">Bigger</button>
+    <iframe src="https://trinket.io/embed/python3/ffed279bb0?runOption=run" width="100%" height="430" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+  </div>
+  
+  <h1>Introductory Python for Humanists + Data Visualization</h1>
+  Last Updated: May 1, 2020
+  <br><br>
+  This tutorial will introduce you to the Python programming language<br>
+  and how it can be used to make scatter plots, bar graphs, and pie charts, like these:<br><br>
+  <img class="smallPic" src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.05.59%20PM.png?v=1588457172854">
+  <img class="smallPic" src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.14.21%20PM.png?v=1588457673785">
+  <img class="smallPic" src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.02.38%20PM.png?v=1588456968800">
+  
+    <!--------------------------------------->
+
+  <h3>1) Start a new Trinket project</h3>
+  1.1) You can either use the embedded trinket on the left side of this page 
+  or work in a new tab at <a href="https://trinket.io/python3" target="_blank">trinket.io/python3</a>.<br><br>
+  1.2) You will write your code under "main.py" in the editing tab, and your result will show up under the play tab.
+  
+    <!--------------------------------------->
+  
+<br><br>
+  <h3>2) Test out the trinket</h3>
+  2.1) Write the following in the left box under "main.py":
+  <pre class="prettyprint">
+print("hello world")
+  </pre>
+  2.2) Run your code by pressing the play button at the top. In the result box, you should get <rslt>hello world</rslt>.
+  <br><br>
+  2.3) Go back to the editing tab and delete your code.
+  <br><br>
+  2.4) Try doing some math:
+  <pre class="prettyprint">
+print(2+2)
+  </pre>
+  
+    <!--------------------------------------->
+  
+<br>
+  <h3>3) Create variables</h3>  
+  3.1) Create a string variable:
+  <pre class="prettyprint">
+greeting = "hello"
+print(greeting)
+  </pre>
+  3.2) Concatenate strings:
+  <pre class="prettyprint">
+greeting = "hello, "
+animal = "puppies!"
+mySentence = greeting+animal
+print(mySentence)
+  </pre>
+  3.3) Create a float variable:
+  <pre class="prettyprint">
+myNumber = 3.14159
+print(myNumber)
+print(myNumber + 10)
+  </pre>
+  3.4) Create an array:
+  <pre class="prettyprint">
+myArray = [1,2,3,4,5]
+print(myArray)
+  </pre>
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>4) Write an If block</h3>
+  
+  4.1) Test if two numbers are equal:
+  <pre class="prettyprint">
+myFirstNum = 5
+mySecondNum = 10
+if (myFirstNum == mySecondNum):
+  print("My numbers are equal.")
+else:
+  print("My numbers are not equal.")
+  </pre>
+  
+  4.2) Try changing the values of myFirstNum and mySecondNum to make sure the test works.
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>5) Write a For loop</h3>  
+  <pre class="prettyprint">
+myArray = [2,4,5,9,14]
+for i in myArray:
+  print(i+1)
+  </pre>
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>6) Now let's start a scatter plot</h3>
+  6.1) Import two useful python libraries: 
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+  </pre>
+  6.2) Add some data:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+<span class="highlight">
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+</span>
+  </pre>
+  6.3) Plot the data points:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+<span class="highlight">
+plt.plot(data_x,data_y, 'ro')
+plt.show()
+</span>
+  </pre>
+  The output should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-04-30%20at%209.58.51%20PM.png?v=1588305648913">
+  <br><br>
+  6.4) 'ro' means your data points will be represented by red circles. Try changing it to 'bx' or 'g^'.
+  <br><br>
+  6.5) Add a line of best fit:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+
+plt.plot(data_x,data_y, 'ro')
+<span class="highlight">fit = np.polyfit(data_x,data_y,1)
+fit_fn = np.poly1d(fit)
+plt.plot(data_x, fit_fn(data_x), 'y-')</span>
+plt.show()
+  </pre>
+  The output should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-04-30%20at%2010.04.31%20PM.png?v=1588305881637">
+  <br><br>
+  6.6) 'y-' produces a solid yellow line. Try changing it to 'r--' or 'b.'
+  
+  <!--------------------------------------->
+    <!------------------------------------->
+  
+  <h3>7) Add some lables to your plot</h3>
+  7.1) Add a title:
+<pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+
+plt.plot(data_x,data_y, 'ro')
+fit = np.polyfit(data_x,data_y,1)
+fit_fn = np.poly1d(fit)
+plt.plot(data_x, fit_fn(data_x), 'y-')
+
+<span class="highlight">plt.title('My Awesome Data Viz')</span>
+
+plt.show()
+  </pre>
+  7.2) Add lables to the X and Y axes:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+
+plt.plot(data_x,data_y, 'ro')
+fit = np.polyfit(data_x,data_y,1)
+fit_fn = np.poly1d(fit)
+plt.plot(data_x, fit_fn(data_x), 'y-')
+
+plt.title('My Awesome Data Viz')
+<span class="highlight">plt.xlabel('My Awesome X-Axis')
+plt.ylabel('My Awesome Y-Axis')</span>
+
+plt.show()
+  </pre>
+  Your plot should now look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.05.59%20PM.png?v=1588457172854">
+  
+  <!---------------------------------->
+  
+  <h3>8) Make a Bar Chart</h3>
+  8.1) Delete the lines creating your scatter plot:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+
+plt.title('My Awesome Data Viz')
+plt.xlabel('My Awesome X-Axis')
+plt.ylabel('My Awesome Y-Axis')
+
+plt.show()
+  </pre>
+  
+  8.2) Display your data as a bar chart:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+
+<span class="highlight">x_pos = np.arange(len(data_x))
+plt.bar(x_pos,data_y)
+plt.xticks(x_pos, data_x)</span>
+
+plt.title('My Awesome Data Viz')
+plt.xlabel('My Awesome X-Axis')
+plt.ylabel('My Awesome Y-Axis')
+
+plt.show()
+  </pre>
+  Your result should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.07.49%20PM.png?v=1588457279293">
+  <br><br>
+  8.3) Add a second set of Y-values:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+<span class="highlight">data_y2 = [1,2,3,5,5]</span>
+
+x_pos = np.arange(len(data_x))
+plt.bar(x_pos,data_y)
+<span class="highlight">plt.bar(x_pos,data_y2)</span>
+
+plt.xticks(x_pos, data_x)
+
+plt.title('My Awesome Data Viz')
+plt.xlabel('My Awesome X-Axis')
+plt.ylabel('My Awesome Y-Axis')
+
+plt.show()
+  </pre>
+  Your result should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.10.43%20PM.png?v=1588457453525">
+  <br><br>
+  
+  8.4) Display the two sets of Y-values side-by-side and change the colors:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+data_x = [2,4,5,9,14]
+data_y = [3,3,6,8,10]
+data_y2 = [1,2,3,5,5]
+
+x_pos = np.arange(len(data_x))
+<span class="highlight">plt.bar(x_pos-.2,data_y, width=.4, color="purple")
+plt.bar(x_pos+.2,data_y2, width=.4, color="orange")</span>
+
+plt.xticks(x_pos, data_x)
+
+plt.title('My Awesome Data Viz')
+plt.xlabel('My Awesome X-Axis')
+plt.ylabel('My Awesome Y-Axis')
+
+plt.show()
+  </pre>
+  Your result should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.14.21%20PM.png?v=1588457673785">
+  <br><br>
+  <!------------------------------->
+  
+  <h3>9) Make a Pie Chart</h3>
+  9.1) Delete the data, the lines creating a bar graph, and the x and y axis lables:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+plt.title('My Awesome Data Viz')
+
+plt.show()
+  </pre>
+  9.2) Add lables and percents as arrays:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+<span class="highlight">lables = [A,B,C,D]
+percents = [33.3,22.2,16.7,5.6,22.2]</span>
+
+plt.title('My Awesome Data Viz')
+
+plt.show()
+  </pre>
+  9.3) Make a pie chart:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+names = ['A','B','C','D','E']
+percents = [33.3,22.2,16.7,5.6,22.2]
+
+<span class="highlight">plt.pie(percents, labels=names)
+plt.axis('equal')</span>
+
+plt.title('My Awesome Data Viz')
+
+plt.show()
+  </pre>
+  The output should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%203.50.06%20PM.png?v=1588456292402">
+  <br><br>
+  9.4) Write the percents on the pie chart:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+names = ['A','B','C','D','E']
+percents = [33.3,22.2,16.7,5.6,22.2]
+
+plt.pie(percents, labels=names<span class="highlight">, autopct='%1.1f%%'</span>)
+plt.axis('equal')
+
+plt.title('My Awesome Data Viz')
+
+plt.show()
+  </pre>
+  
+  9.5) Highlight the second slice:
+  <pre class="prettyprint">
+import numpy as np
+from matplotlib import pyplot as plt
+
+names = ['A','B','C','D','E']
+percents = [33.3,22.2,16.7,5.6,22.2]
+<span class="highlight">separate = (0,0.1,0,0,0)</span>
+
+plt.pie(percents, labels=names, autopct='%1.1f%%'<span class="highlight">, explode=separate</span>)
+plt.axis('equal')
+
+plt.title('My Awesome Data Viz')
+
+plt.show()
+  </pre>
+Your result should look like this:<br>
+  <img src="https://cdn.glitch.com/a532343e-8299-402a-93f8-f812e209d87c%2FScreen%20Shot%202020-05-02%20at%204.02.38%20PM.png?v=1588456968800">
+  
+  
+<br><br> 
+  <h3>You learned how to make three kinds of plots using Python!</h3>
+  To learn more about Python data visualization, check out <a href="https://matplotlib.org/">matplotlib.org</a> and <a href="https://mode.com/blog/python-data-visualization-libraries/">Mode Blog</a>.
+
+  <button id="trinketButton" onclick="openTrinket()">Open Trinket</button>
+
+</body>
+
+
+
+<style>
+  body{
+    font-size:16px;
+    padding:2em;
+  }
+  h3{
+    background-color:whitesmoke;
+    padding:10px;
+  }
+  img{
+    width:400px;
+    border:3px solid grey;
+  }
+  .smallPic{
+    width:250px;
+    border:1px solid white;
+  }
+  .highlight{
+    background-color:yellow;
+  }
+  #trinket{
+    border:3px solid grey;
+    width:400px;
+    height:450px;
+    position:fixed;
+    right:0px;
+    top:0px;
+    background-color:grey;
+  }
+  #trinketButton{
+    position:fixed;
+    top:0px;
+    display:none;
+  }
+  button{
+    background-color:yellow;
+    height:20px;
+    right:0px;
+  }
+</style>
+
+<script>
+  function closeTrinket(){
+    document.getElementById('trinket').style.display = "none";
+    document.getElementById('trinketButton').style.display = "block";
+  }
+  function openTrinket(){
+    document.getElementById('trinket').style.display = "block";
+    document.getElementById('trinketButton').style.display = "none";
+  }
+  
+  var trinketBig = false;
+  function resize(){
+    trinketBig = !trinketBig;
+    if(trinketBig){
+      document.getElementById('trinket').style.width = "100%";
+      document.getElementById('sizeButton').innerHTML = "Smaller";
+    }else{
+      document.getElementById('trinket').style.width = "400px";
+      document.getElementById('sizeButton').innerHTML = "Bigger";
+    }
+  }
+</script>
