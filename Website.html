@@ -1,0 +1,965 @@
+<head>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+  <h1>Make a Portfolio Website</h1>
+  Last updated: May 4, 2020
+  <br><br>
+  This tutorial will take you through the process of building a simple portfolio website from scratch using Glitch.
+  The final product will look like this:
+  <br><br>
+  <img src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%2011.03.11%20AM.png?v=1587402238053">
+  <img src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%2011.03.20%20AM.png?v=1587402233852">
+  <img src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%2011.03.02%20AM.png?v=1587402238075">
+  <br><br>
+  
+    <!--------------------------------------->
+
+  <h3>1) Start a new Glitch project</h3>
+  1.1) Go to <a href="https://glitch.com">glitch.com</a>.<br><br>
+  1.2) Click on "New Project" and "hello-webpage".<br><br>
+  1.3) In the box on the left, delete all of the files except index.html and assets.<br><br>
+  1.4) Delete all of the text in the index.html file. We want to start from scratch.<br><br>
+  
+    <!--------------------------------------->
+
+  <h3>2) Add two more HTML files</h3>
+  2.1) In the box on the left, click on "New File" and add a file named "about.html".<br><br>
+  2.2) Add another file named "cv.html".<br><br>
+  
+    <!--------------------------------------->
+
+  
+  <h3>3. Start the "about" file</h3>
+  3.1 Open about.html and add body tags to the file:
+  <pre class="prettyprint">
+&lt;body&gt;
+&lt;/body&gt;
+  </pre>
+  3.2 Inside the body tags, add a heading using "h1" tags:
+  <pre class="prettyprint">
+&lt;body&gt;
+  <span class="highlight">&lt;h1&gt;About Me&lt;/h1&gt;</span>
+&lt;/body&gt;
+  </pre>
+  
+  3.3 Under the heading, add links to each of the three pages (Home, About Me, and CV) using "a" tags:
+  <pre class="prettyprint">
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  <span class="highlight">&lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;</span>
+&lt;/body&gt;
+  </pre>
+  
+    <!--------------------------------------->
+
+  <h3>4) Add a heading and links to the other two pages</h3>
+  4.1) Copy the code from about.html into index.html and cv.html.<br><br>
+  4.2) Change the headings from "About Me" to "My New Website" in index.html and "CV" in cv.html.<br><br>
+  4.3) Click on "show" at the top of the glitch window to see your website. All of the pages should look like this:<br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-19%20at%207.58.56%20PM.png?v=1587347953470">
+  
+    <!--------------------------------------->
+
+  <h3>5) Add content to the "about" page</h3>
+  5.1) Upload a picture from your computer by going to "assets" in the box on the left, then "upload an asset".<br><br>
+  5.2) Add an image tag to about.html:
+  <pre class="prettyprint">
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  <span class="highlight">&lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src=""&gt;</span>
+&lt;/body&gt;
+  </pre>
+  5.3) Find the URL of your image by going to "assets" and clicking on the image.
+  5.4) Copy the URL and paste it between the quotation marks in the image tag in about.html:
+  <pre class="prettyprint">
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  <span class="highlight">&lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;</span>
+&lt;/body&gt;
+  </pre>
+  5.5) Add some text under the image:
+  <pre class="prettyprint">
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;
+  <span class="highlight">&lt;br&gt;&lt;br&gt;
+  Contact: julia.uhr@colorado.edu
+  &lt;br&gt;&lt;br&gt;
+  Here is a paragraph about me and what I'm up to...</span>
+&lt;/body&gt;
+  </pre>
+  5.6) Look at the "about" page of your website. It should now show your picture and text, but the image is probably too large.
+  
+    <!--------------------------------------->
+
+  
+  <h3>6) Add a style sheet</h3>
+  6.1) Add a new file named "general.css". This will contain the default styling that applies to all pages of your website.<br><br>
+  6.2) In general.css, define the width for images:
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+  </pre>
+
+    <!--------------------------------------->
+
+  <h3>7) Link general.css to about.html</h3>
+  7.1) In about.html, add head tags:
+  <pre class="prettyprint">
+<span class="highlight">&lt;head&gt;
+&lt;/head&gt;</span>
+
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;
+  &lt;br&gt;&lt;br&gt;
+  Contact: julia.uhr@colorado.edu
+  &lt;br&gt;&lt;br&gt;
+  Here is a paragraph about me and what I'm up to...
+&lt;/body&gt;
+  </pre>
+  7.2) Between the head tags, add a link to general.css:
+  <pre class="prettyprint">
+&lt;head&gt;
+  <span class="highlight">&lt;link href="general.css" rel="stylesheet"&gt;</span>
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;
+  &lt;br&gt;&lt;br&gt;
+  Contact: julia.uhr@colorado.edu
+  &lt;br&gt;&lt;br&gt;
+  Here is a paragraph about me and what I'm up to...
+&lt;/body&gt;
+  </pre>
+  7.3) Your "about" page should now look like this:<br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-19%20at%209.07.37%20PM.png?v=1587352088222">
+
+  <!--------------------------------------->
+  
+  <h3>8) Find fonts from Google Fonts</h3>
+  8.1) Go to <a href="https://fonts.google.com/">fonts.google.com</a>.<br><br>
+  8.2) Select two fonts you want to use. I will use Viaoda Libre for headings and Libre Franklin for paragraphs.<br><br>
+  8.3) Click "view your selected families" in the upper right corner of the Google Fonts page.<br><br>
+  8.4) Go to the "embed" tab and copy the font link.<br><br>
+  8.5) Go to about.html and paste the font link between the "head" tags:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  <span class="highlight">&lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;</span>
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;
+  &lt;br&gt;&lt;br&gt;
+  Contact: julia.uhr@colorado.edu
+  &lt;br&gt;&lt;br&gt;
+  Here is a paragraph about me and what I'm up to...
+&lt;/body&gt;
+  </pre>
+  
+    <!--------------------------------------->
+  
+  <h3>9) Add styling to general.css</h3>
+  9.1) In general.css, define the font, padding, and text alignment for the body:
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+<span class="highlight">body{
+  font-family: 'Libre Franklin';
+  padding: 2em;
+  text-align: center;
+}</span>
+  </pre>
+  9.2) Define the font and font size for h1 and h2:
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+body{
+  font-family: 'Libre Franklin';
+  padding: 2em;
+  text-align: center;
+}
+<span class="highlight">h1{
+  font-family: 'Viaoda Libre';
+  font-size: 60px;
+}
+h2{
+  font-family: 'Viaoda Libre';
+}</span>
+  </pre>
+  9.3) Make the page links look prettier using padding, margin, border radius, etc:
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+body{
+  font-family: 'Libre Franklin';
+  padding: 2em;
+  text-align: center;
+}
+h1{
+  font-family: 'Viaoda Libre';
+  font-size: 60px;
+}
+h2{
+  font-family: 'Viaoda Libre';
+}
+<span class="highlight">a{
+    padding: .5em;
+    margin: 1em;
+    font-family: 'Viaoda Libre';
+    font-size: 20px;
+    color: black;
+    background-color: whitesmoke;
+    text-decoration: none;
+    border-radius: 20px;
+    border: 1px solid white;
+  }</span>
+  </pre>
+  9.4) Add a hover effect to the links:
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+body{
+  font-family: 'Libre Franklin';
+  padding: 2em;
+  text-align: center;
+}
+h1{
+  font-family: 'Viaoda Libre';
+  font-size: 60px;
+}
+h2{
+  font-family: 'Viaoda Libre';
+}
+a{
+  padding: .5em;
+  margin: 1em;
+  font-family: 'Viaoda Libre';
+  font-size: 20px;
+  color: black;
+  background-color: whitesmoke;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid white;
+  }
+  <span class="highlight">a:hover{
+    border: 1px solid orangered;
+  }</span>
+  </pre>
+  
+      <!--------------------------------------->
+
+  <h3>10) General.css and about.html are complete!</h3>
+  Your "About Me" page should now look like this:<br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-19%20at%2010.06.47%20PM.png?v=1587355629045">
+  
+      <!--------------------------------------->
+
+  <h3>11) Add the default styling to the "index" and "cv" files</h3>
+  11.1) Copy the head from about.html and paste them into index.html and cv.html:
+  <pre class="prettyprint">
+<span class="highlight">&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;</span>
+
+&lt;body&gt;
+  &lt;h1&gt;My New Website&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+&lt;/body&gt;
+  </pre>
+  11.2) Your home page (index) should look like this:
+  <br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-19%20at%2010.49.37%20PM.png?v=1587358192315">
+  
+  
+  <!--------------------------------------->
+
+  <h3>12) Add special styling to your home page</h3>
+  12.1) At the bottom of index.html, add style tags:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My New Website&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+&lt;/body&gt;
+
+<span class="highlight">&lt;style&gt;
+&lt;/style&gt;</span>
+  </pre>
+  12.2) Add another image to the "assets" folder. This will be the background image for your home page.<br><br>
+  12.3) Between the "style" tags in index.html, add a background image to the body element:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My New Website&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  <span class="highlight">body{
+    background-image: url("https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2FScreenShot00014-1920x1080-1e742e61fc2c10c196932bc74bed103e.jpg?v=1587095216211");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }</span>
+&lt;/style&gt;
+  </pre>
+  12.4) Add other unique styling for the home page heading and links:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My New Website&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  body{
+    background-image: url("https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2FScreenShot00014-1920x1080-1e742e61fc2c10c196932bc74bed103e.jpg?v=1587095216211");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  <span class="highlight">h1{
+    font-family: 'Viaoda Libre'
+    font-size: 60px;
+    color: white;
+  }
+a{
+    padding: 1em;
+    margin: 1em;
+    font-family: 'Viaoda Libre'
+    font-size: 20px;
+    color:black;
+    text-decoration:none;
+    background-color: rgba(255,255,255,.7);
+    border-radius: 20px;
+    border:1px solid white;
+  }
+a:hover{
+    background-color: white;
+    border:1px solid white;
+  }</span>
+&lt;/style&gt;
+  </pre>
+  
+    <!--------------------------------------->
+
+  <h3>13) Index.html is complete!</h3>
+  Your home page should look like this:<br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%209.29.53%20AM.png?v=1587396615160">
+  
+    <!--------------------------------------->
+
+  <h3>14) Add content to the CV page</h3>
+  14.1) In cv.html, add "h2" tags (second heading) for CV sections like "Education", "Teaching", and "Publications":
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  <span class="highlight">&lt;h2&gt;Education&lt;/h2&gt;
+  &lt;h2&gt;Teaching&lt;/h2&gt;
+  &lt;h2&gt;Publications&lt;/h2&gt;</span>
+&lt;/body&gt;
+  </pre>
+  14.2) Under each heading, add some bullet points using "li" (list item) tags:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;h2&gt;Education&lt;/h2&gt;
+    <span class="highlight">&lt;li&gt;MA Philosophy&lt;/li&gt;
+    &lt;li&gt;JD 2016&lt;/li&gt;
+    &lt;li&gt;BA Philosopy 2010&lt;/li&gt;</span>
+  &lt;h2&gt;Teaching&lt;/h2&gt;
+    <span class="highlight">&lt;li&gt;Workshops&lt;/li&gt;
+    &lt;li&gt;Classes&lt;/li&gt;
+    &lt;li&gt;Teaching Assistantships&lt;/li&gt;</span>
+  &lt;h2&gt;Publications&lt;/h2&gt;
+    <span class="highlight">&lt;li&gt;Paper 1&lt;/li&gt;
+    &lt;li&gt;Paper 2&lt;/li&gt;
+    &lt;li&gt;Paper 3&lt;/li&gt;</span>
+&lt;/body&gt;
+  </pre>
+  14.3) Your CV page should now look like this:<br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%209.51.49%20AM.png?v=1587397939393">
+  
+    <!--------------------------------------->
+
+  
+  <h3>15) Add a div with unique styling to the CV page</h3>
+  15.1) Add "div" tags around the page content with an id of "leftAlign":
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  <span class="highlight">&lt;div id="leftAlign"&gt;</span>
+    &lt;h2&gt;Education&lt;/h2&gt;
+      &lt;li&gt;MA Philosophy&lt;/li&gt;
+      &lt;li&gt;JD 2016&lt;/li&gt;
+      &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+    &lt;h2&gt;Teaching&lt;/h2&gt;
+      &lt;li&gt;Workshops&lt;/li&gt;
+      &lt;li&gt;Classes&lt;/li&gt;
+      &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+    &lt;h2&gt;Publications&lt;/h2&gt;
+      &lt;li&gt;Paper 1&lt;/li&gt;
+      &lt;li&gt;Paper 2&lt;/li&gt;
+      &lt;li&gt;Paper 3&lt;/li&gt;
+    <span class="highlight">&lt;/div&gt;</span>
+&lt;/body&gt;
+  </pre>
+  15.2) At the bottom of cv.html, add style tags and left-align the "leftAlign" div:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2&gt;Education&lt;/h2&gt;
+      &lt;li&gt;MA Philosophy&lt;/li&gt;
+      &lt;li&gt;JD 2016&lt;/li&gt;
+      &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+    &lt;h2&gt;Teaching&lt;/h2&gt;
+      &lt;li&gt;Workshops&lt;/li&gt;
+      &lt;li&gt;Classes&lt;/li&gt;
+      &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+    &lt;h2&gt;Publications&lt;/h2&gt;
+      &lt;li&gt;Paper 1&lt;/li&gt;
+      &lt;li&gt;Paper 2&lt;/li&gt;
+      &lt;li&gt;Paper 3&lt;/li&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+<span class="highlight">&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+&lt;/style&gt;</span>
+  </pre>
+  
+      <!--------------------------------------->
+  
+<h3>16) Add a function to toggle the visibility of list items when you click on the heading</h3>
+  16.1) Add "div" tags around each set of list items, each with a unique ID and a class of "cvContent":
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2&gt;Education&lt;/h2&gt;
+      <span class="highlight">&lt;div class="cvContent" id="edu"&gt;</span>
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      <span class="highlight">&lt;/div&gt;</span>
+    &lt;h2&gt;Teaching&lt;/h2&gt;
+      <span class="highlight">&lt;div class="cvContent" id="teach"&gt;</span>
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      <span class="highlight">&lt;/div&gt;</span>
+    &lt;h2&gt;Publications&lt;/h2&gt;
+      <span class="highlight">&lt;div class="cvContent" id="pubs"&gt;</span>
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      <span class="highlight">&lt;/div&gt;</span>
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+&lt;/style&gt;
+  </pre>
+  
+   <!--------------------------------------->
+
+  16.2) Add a click event to each of the "h2" elements that calls a "toggleOpen" function and passes the ID of the associated div to that function:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    <span class="highlight">&lt;h2 onclick="toggleOpen('edu')"&gt;Education&lt;/h2&gt;</span>
+      &lt;div class="cvContent" id="edu"&gt;
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      &lt;/div&gt;
+    <span class="highlight">&lt;h2 onclick="toggleOpen('teach')"&gt;Teaching&lt;/h2&gt;</span>
+      &lt;div class="cvContent" id="teach"&gt;
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      &lt;/div&gt;
+    <span class="highlight">&lt;h2 onclick="toggleOpen('pubs')"&gt;Publications&lt;/h2&gt;</span>
+      &lt;div class="cvContent" id="pubs"&gt;
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+&lt;/style&gt;
+  </pre>
+  16.3) At the bottom of cv.html, add "script" tags and a Javascript function to toggle visibility:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2 onclick="toggleOpen('edu')"&gt;Education&lt;/h2&gt;
+      &lt;div class="cvContent" id="edu"&gt;
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('teach')"&gt;Teaching&lt;/h2&gt;
+      &lt;div class="cvContent" id="teach"&gt;
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('pubs')"&gt;Publications&lt;/h2&gt;
+      &lt;div class="cvContent" id="pubs"&gt;
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+&lt;/style&gt;
+
+<span class="highlight">&lt;script&gt;
+  function toggleOpen(name){
+    var section = document.getElementById(name);
+    if(section.style.display !== "block"){
+      section.style = "display:block;"
+    }else{
+      section.style = "display:none;"
+    }
+  }
+&lt;/script&gt;</span>
+  </pre>
+  16.3) Set the default display style of "cvContent" elements to "none":
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2 onclick="toggleOpen('edu')"&gt;Education&lt;/h2&gt;
+      &lt;div class="cvContent" id="edu"&gt;
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('teach')"&gt;Teaching&lt;/h2&gt;
+      &lt;div class="cvContent" id="teach"&gt;
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('pubs')"&gt;Publications&lt;/h2&gt;
+      &lt;div class="cvContent" id="pubs"&gt;
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+  <span class="highlight">.cvContent{
+    display:none;
+  }</span>
+&lt;/style&gt;
+
+&lt;script&gt;
+  function toggleOpen(name){
+    var section = document.getElementById(name);
+    if(section.style.display !== "block"){
+      section.style = "display:block;"
+    }else{
+      section.style = "display:none;"
+    }
+  }
+&lt;/script&gt;
+  </pre>
+  16.4) Add a hover effect to the headings:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2 onclick="toggleOpen('edu')"&gt;Education&lt;/h2&gt;
+      &lt;div class="cvContent" id="edu"&gt;
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('teach')"&gt;Teaching&lt;/h2&gt;
+      &lt;div class="cvContent" id="teach"&gt;
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('pubs')"&gt;Publications&lt;/h2&gt;
+      &lt;div class="cvContent" id="pubs"&gt;
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+  .cvContent{
+    display:none;
+  }
+  <span class="highlight">h2:hover{
+    text-decoration:underline;
+    background-color:whitesmoke;
+  }</span>
+&lt;/style&gt;
+
+&lt;script&gt;
+  function toggleOpen(name){
+    var section = document.getElementById(name);
+    if(section.style.display !== "block"){
+      section.style = "display:block;"
+    }else{
+      section.style = "display:none;"
+    }
+  }
+&lt;/script&gt;
+  </pre>
+  
+  <h3>17) You're finished! Your CV page should look like this (with list items displayed when you click on the headings):</h3> 
+  <br><br>
+  <img class="largePic" src="https://cdn.glitch.com/e168255d-afc0-449a-bbbf-461e91aca597%2FScreen%20Shot%202020-04-20%20at%2011.00.05%20AM.png?v=1587402059268">
+  <br><br>
+  If you want to move your website off of Glitch, You can download the files you wrote 
+  and upload them to <a href="https://pages.github.com/">Github Pages</a> or any other hosting service.
+  <br><br>
+  If you want to learn more about web programming, <a href="https://www.w3schools.com/">W3schools</a> 
+  has lots of great interactive tutorials.
+  <br><br>
+  
+  <h3>Here is the full code for each file you created during this tutorial:</h3>
+  <h2>about.html</h2>
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2F20160518_110547.jpg?v=1587349286257"&gt;
+  &lt;br&gt;&lt;br&gt;
+  Contact: julia.uhr@colorado.edu
+  &lt;br&gt;&lt;br&gt;
+  Here is a paragraph about me and what I'm up to...
+&lt;/body&gt;
+  </pre>
+  
+  <h2>index.html</h2>
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My New Website&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  body{
+    background-image: url("https://cdn.glitch.com/9fd1c81b-8c9a-43e8-951f-0cce1cca8aa0%2FScreenShot00014-1920x1080-1e742e61fc2c10c196932bc74bed103e.jpg?v=1587095216211");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1{
+    font-family: 'Viaoda Libre'
+    font-size: 60px;
+    color: white;
+  }
+a{
+    padding: 1em;
+    margin: 1em;
+    font-family: 'Viaoda Libre'
+    font-size: 20px;
+    color:black;
+    text-decoration:none;
+    background-color: rgba(255,255,255,.7);
+    border-radius: 20px;
+    border:1px solid white;
+  }
+a:hover{
+    background-color: white;
+    border:1px solid white;
+  }
+&lt;/style&gt;
+  </pre>
+  
+  <h2>cv.html</h2>
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;link href="general.css" rel="stylesheet"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&family=Viaoda+Libre&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;My CV&lt;/h1&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About Me&lt;/a&gt;
+  &lt;a href="cv.html"&gt;CV&lt;/a&gt;
+  &lt;div id="leftAlign"&gt;
+    &lt;h2 onclick="toggleOpen('edu')"&gt;Education&lt;/h2&gt;
+      &lt;div class="cvContent" id="edu"&gt;
+        &lt;li&gt;MA Philosophy&lt;/li&gt;
+        &lt;li&gt;JD 2016&lt;/li&gt;
+        &lt;li&gt;BA Philosopy 2010&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('teach')"&gt;Teaching&lt;/h2&gt;
+      &lt;div class="cvContent" id="teach"&gt;
+        &lt;li&gt;Workshops&lt;/li&gt;
+        &lt;li&gt;Classes&lt;/li&gt;
+        &lt;li&gt;Teaching Assistantships&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;h2 onclick="toggleOpen('pubs')"&gt;Publications&lt;/h2&gt;
+      &lt;div class="cvContent" id="pubs"&gt;
+        &lt;li&gt;Paper 1&lt;/li&gt;
+        &lt;li&gt;Paper 2&lt;/li&gt;
+        &lt;li&gt;Paper 3&lt;/li&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;style&gt;
+  #leftAlign{
+    text-align: left;
+  }
+  .cvContent{
+    display:none;
+  }
+  h2:hover{
+    text-decoration:underline;
+    background-color:whitesmoke;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  function toggleOpen(name){
+    var section = document.getElementById(name);
+    if(section.style.display !== "block"){
+      section.style = "display:block;"
+    }else{
+      section.style = "display:none;"
+    }
+  }
+&lt;/script&gt;
+  </pre>
+  
+  <h2>general.css</h2>
+  <pre class="prettyprint">
+img{
+  width: 50%;
+}
+body{
+  font-family: 'Libre Franklin';
+  padding: 2em;
+  text-align: center;
+}
+h1{
+  font-family: 'Viaoda Libre';
+  font-size: 60px;
+}
+h2{
+  font-family: 'Viaoda Libre';
+}
+a{
+  padding: .5em;
+  margin: 1em;
+  font-family: 'Viaoda Libre';
+  font-size: 20px;
+  color: black;
+  background-color: whitesmoke;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid white;
+  }
+  a:hover{
+    border: 1px solid orangered;
+  }
+  </pre>
+  
+</body>
+
+
+
+<style>
+  body{
+    font-size:16px;
+    padding:2em;
+  }
+  h3{
+    background-color:whitesmoke;
+    padding:10px;
+  }
+  img{
+    width:30%;
+    border:3px solid grey;
+  }
+  .largePic{
+    width:50%;
+  }
+  .highlight{
+    background-color:yellow;
+  }
+</style>
