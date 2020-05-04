@@ -1,0 +1,590 @@
+<head>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+  <div id="trinket">
+    <button style="float:right;" onclick="closeTrinket()">Close Trinket</button>
+    <button id="sizeButton" style="float:left;" onclick="resize()">Bigger</button>
+<iframe src="https://trinket.io/embed/python3/ffed279bb0?runOption=run" width="100%" height="430" frameborder="0" marginwidth="0" marginheight="0"></iframe>  </div>
+  
+  <h1>Introductory Python for Humanists + Text Analysis</h1>
+  [Last Updated: May 4, 2020]
+  <hr style="border:1px solid black">
+  <br>
+  This tutorial will introduce you to the Python programming language and how it can be used for basic text analysis.<br>
+  No programming experience is necessary. 
+    <!--------------------------------------->
+
+  <h3>1) Start a new Trinket project</h3>
+  1.1) You can either use the embedded trinket on the left side of this page 
+  or work in a new tab at <a href="https://trinket.io/python3" target="_blank">trinket.io/python3</a>.<br><br>
+  1.2) You will write your code under "main" in the editing tab, and your result will show up under the play tab.
+  
+    <!--------------------------------------->
+  
+<br><br>
+  <h3>2) Test out the trinket</h3>
+  2.1) Write the following in the left box under "main.py":
+  <pre class="prettyprint">
+print("hello world")
+  </pre>
+  2.2) Run your code by pressing the play button at the top. In the result box, you should get "hello world".
+  <br><br>
+  2.3) Try doing some math:
+  <pre class="prettyprint">
+print(2+2)
+  </pre>
+  
+    <!--------------------------------------->
+  
+<br>
+  <h3>3) Create variables</h3>  
+  3.1) Create a string variable:
+  <pre class="prettyprint">
+greeting = "hello"
+print(greeting)
+  </pre>
+  
+  3.2) Create a float variable:
+  <pre class="prettyprint">
+myNumber = 3.14159
+print(myNumber)
+print(myNumber + 10)
+  </pre>
+  
+  3.3) Create an array:
+  <pre class="prettyprint">
+myArray = [1,2,3,4,5]
+print(myArray)
+  </pre>
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>4) Write an If block</h3>  
+  <pre class="prettyprint">
+myFirstNum = 5
+mySecondNum = 10
+if (myFirstNum == mySecondNum):
+  print("My numbers are equal.")
+else:
+  print("My numbers are not equal.")
+  </pre>
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>5) Write a For loop</h3>  
+  <pre class="prettyprint">
+myArray = [2,4,5,9,14]
+for i in myArray:
+  print(i+1)
+  </pre>
+  
+  <!--------------------------------------->
+  
+  <br>
+  <h3>6) Now let's start doing things with strings</h3>
+  6.1) Define two string variables:
+  <pre class="prettyprint">
+greeting = "Hello, "
+animal = "puppies"
+  </pre>
+  
+  6.2) Concatenate the strings:
+  <pre class="prettyprint">
+greeting = "Hello, "
+animal = "puppies"
+<span class="highlight">mySentence = greeting + animal + "!"
+print(mySentence)</span>
+  </pre>
+  The result should be:<br>
+  <rslt>Hello, puppies!</rslt>
+  <br><br>
+  
+  6.3) Count the characters in a string:
+  <pre class="prettyprint">
+greeting = "Hello, "
+animal = "puppies"
+mySentence = greeting + animal + "!"
+print(mySentence)
+<span class="highlight">print(len(mySentence))</span>
+  </pre>
+  The result should be:<br>
+  <rslt>Hello, puppies!
+  <br>15</rslt>
+  <br><br>
+  
+  6.4) Concatenate a string and an integer:
+  <pre class="prettyprint">
+greeting = "Hello, "
+animal = "puppies"
+mySentence = greeting + animal + "!"
+<span class="highlight">charCount = len(mySentence)</span>
+
+print(mySentence)
+<span class="highlight">print(str(charCount) + " characters")</span>
+  </pre>
+  str() turns the integer, charCount, into a string so it can be concatenated with the string " characters".
+  <br><br>The result should be:<br>
+  <rslt>Hello, puppies!<br>
+  15 characters
+  </rslt><br><br>
+  
+  6.5) Count how many times the letter P occurs in the sentence:
+  <pre class="prettyprint">
+greeting = "Hello, "
+animal = "puppies"
+mySentence = greeting + animal + "!"
+charCount = len(mySentence)
+<span class="highlight">p_count = mySentence.count('p')</span>
+
+print(mySentence)
+print(str(charCount) + " characters")
+<span class="highlight">print(str(p_count) + " Ps")</span>
+  </pre>
+  Note: count() is case-sensitive, so count('p') will only count lower-case Ps.
+  <br><br>The result should be:<br>
+  <rslt>Hello, puppies!
+  <br>15 characters
+  <br>3 Ps
+  </rslt><br><br>
+  
+<!------------------------------->  
+  
+<h3>7) Do things with an array of strings</h3>
+  
+  7.1) Delete all of your code.<br><br>
+  
+  7.2) Make an array of strings:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+print(names)
+  </pre>
+  
+  7.3) Add a name to the array:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+<span class="highlight">names.append('frank')</span>
+print(names)
+  </pre>
+  
+  7.4) Remove a name from the array:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+names.append('frank')
+<span class="highlight">names.remove('evan')</span>
+print(names)
+  </pre>
+  
+  7.5) Sort the array alphabetically:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+names.append('frank')
+names.remove('evan')
+<span class="highlight">names.sort()</span>
+print(names)
+  </pre>
+  The result should be:<br>
+  <rslt>['alice', 'ben', 'cat', 'doug', 'frank']</rslt><br><br>
+  
+  7.5) Loop over the elements in the array:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+names.append('frank')
+names.remove('evan')
+names.sort()
+
+<span class="highlight">for i in names:
+  print(i+" is awesome!")</span>
+  </pre>
+  The result should be:<br>
+  <rslt>alice is awesome!<br>
+ben is awesome!<br>
+cat is awesome!<br>
+doug is awesome!<br>
+frank is awesome!</rslt><br><br>
+  
+  7.6) Add an If block to the loop:
+  <pre class="prettyprint">
+names = ['ben','alice','evan','doug','cat']
+names.append('frank')
+names.remove('evan')
+names.sort()
+
+for i in names:
+  <span class="highlight">if (i == "doug"):
+    print(i+" is awesome!")
+  else:
+    print(i+" is okay.")</span>
+  </pre>
+  The result should be:<br>
+  <rslt>alice is okay.<br>
+ben is okay.<br>
+cat is okay.<br>
+doug is awesome!<br>
+frank is okay.</rslt><br><br>
+  
+  <!---------------------------------------->
+
+<h3>8) Measure word frequencies</h3>
+  
+  8.1) Delete all of your code.<br><br>
+  
+  8.2) Import Counter a python library for counting:
+  <pre class="prettyprint">
+from collections import Counter
+  </pre>
+  
+  8.3) Make a variable containing the entire text of the following article:<br><br>
+
+  <textarea>Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says.</textarea>
+  <pre class="prettyprint">
+from collections import Counter
+
+<span class="highlight">article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."</span>
+  </pre>
+  
+  8.4) Count the number of times "Google" occurs in the article:
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+<span class="highlight">(print(article1.count("Google")))</span>
+  </pre>
+  The result should be: <rslt>9</rslt><br><br>
+  
+  
+  8.5) Split the article into an array of individual words and get a word count:
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+<span class="highlight">article1_array = article1.split()
+print(len(article1_array))</span>
+  </pre>
+  The result should be: <rslt>661</rslt><br><br>
+  
+  8.6) Find the 10 most common words in the article:
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+<span class="highlight">
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)</span>
+  </pre>
+  The result should be:<br>
+  <rslt>[('the', 36), ('a', 24), ('to', 15), ('in', 14), ('and', 14), ('of', 12), ('on', 9), ('that', 8), ('for', 8), ('is', 7)]</rslt>
+  <br>This is an array of the ten most common words and the number of times they occur in the article.
+  <br>Unfortunately, they're small words that aren't very useful.
+  <br><br>
+  
+  8.7) Remove words smaller than 6 characters:
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+<span class="highlight">
+for i in reversed(article1_array):
+  if (len(i) &lt; 6):
+	  article1_array.remove(i)</span>
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)
+  </pre>
+  The result should be:<br>
+  <rslt>[('Google', 6), ('camera', 5), ('looking', 4), ('search', 3), ('information', 3), ('through', 3), ('worked', 2), ("Young's", 2), ('iPhone', 2), ('within', 2)]</rslt>
+<br><br>
+  
+  8.8) Keep small words that are important, like "AR":
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+
+for i in reversed(article1_array):
+  <span class="highlight">if ((len(i) &lt; 6) & (i != "AR")):</span>
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)
+  </pre>
+  The result should be:<br>
+  <rslt>[('Google', 6), ('camera', 5), ('looking', 4), ('search', 3), ('information', 3), ('through', 3), ('worked', 2), ("Young's", 2), ('iPhone', 2), ('within', 2)]</rslt>
+  <br><br>
+  Note that when we originally counted "Google" using article1.count("Google"), we found 9.
+  And now, using most_common(), we are only finding 6.
+  That's because split() makes an array of strings separated by a space, so when we use count("Google") on the array we created using split(), it will only find " Google " and not "Google." or "Google,".
+  As part of cleaning your data, you will probably want to remove unnecessary characters, like punctuation.
+  You may also want to convert all text to lowercase using lower().
+  <br><br>
+  
+  <!------------------------------------>
+  
+  <h3>9) Add a second article for comparison</h3>
+  
+  9.1) Add the following article as a variable:<br>
+  <textarea>Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out.</textarea>
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+<span class="highlight">article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+</span>
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)
+  </pre>
+  
+  9.2) For each of the 10 most common words in article1, see how many times it occurs in article2:
+  <pre class="prettyprint">
+from collections import Counter
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)
+
+<span class="highlight">for i in article1_frequentWords:
+  print(i + ": " + str(article2.count(i)))</span>
+  </pre>
+  The result should be:<br>
+  <rslt>[('Google', 6), ('AR', 6), ('camera', 5), ('looking', 4), ('search', 3), ('information', 3), ('through', 3), ('worked', 2), ("Young's", 2), ('iPhone', 2)]
+<br>Google: 5
+<br>AR: 7
+<br>camera: 2
+<br>looking: 1
+<br>search: 5
+<br>information: 0
+<br>through: 0
+<br>worked: 0
+<br>Young's: 0
+<br>iPhone: 0
+  </rslt>
+  
+  <h3>10) Make a chart</h3>
+  
+  10.1) Import numpy and pyplot, python libraries for math and plotting:
+  <pre class="prettyprint">
+from collections import Counter
+<span class="highlight">import numpy as np
+from matplotlib import pyplot as plt</span>
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+print(article1_frequentWords)
+
+for i in article1_frequentWords:
+  print(i + ": " + str(article2.count(i)))
+  </pre>
+  
+  10.2) Delete your two print statements, make blank arrays for x and y data, and fill the arrays with words and frequencies from Article 1:
+  <pre class="prettyprint">
+from collections import Counter
+import numpy as np
+from matplotlib import pyplot as plt
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+<span class="highlight">data_x = []
+data_y = []
+</span>
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+
+for i in article1_frequentWords:
+  <span class="highlight">data_x.append(i[0])
+  data_y.append(i[1])</span>
+  </pre>
+  
+  10.3) Chart your words and frequencies for Article 1:
+  <pre class="prettyprint">
+from collections import Counter
+import numpy as np
+from matplotlib import pyplot as plt
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+data_x = []
+data_y = []
+
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+
+for i in article1_frequentWords:
+  data_x.append(i[0])
+  data_y.append(i[1])
+  
+<span class="highlight">x_pos = np.arange(len(data_x))
+plt.bar(x_pos,data_y)
+plt.xticks(x_pos, data_x, rotation='vertical')
+plt.tight_layout()
+plt.show()</span> 
+  </pre>
+  The result should look like this:<br>
+<img src="https://cdn.glitch.com/904489f6-526c-4cd6-b049-60c2f0a1b12d%2FScreen%20Shot%202020-05-03%20at%203.41.41%20PM.png?v=1588542112591">  
+  <br><br>
+  
+  10.4) Add frequency data for the second article and a legend:
+  <pre class="prettyprint">
+from collections import Counter
+import numpy as np
+from matplotlib import pyplot as plt
+
+article1 = "Did you know that the painter Rockwell Kent, whose splendorous Afternoon on the Sea, Monhegan hangs in San Francisco's de Young Museum, worked on murals and advertisements for General Electric and Rolls-Royce? I did not, until I visited Gallery 29 on a recent Tuesday afternoon, phone in hand. Because the de Young's curators worked with Google to turn some of the informational placards that hang next to paintings into virtual launchpads, any placard that includes an icon for Google Lens—the name of the company's visual search software—is now a cue. Point the camera at the icon and a search result pops up, giving you more information about the work. (You can access Google Lens on the iPhone within the Google search app for iOS or within the native camera app on Android phones.) The de Young's augmented-reality add-ons extend beyond the informational. Aim your camera at a dot drawing of a bee in the Osher Sculpture Garden and a quirky video created by artist Ana Prvacki plays—she attempts to pollinate flowers herself with a bizarrely decorated gardening glove. It wasn't so long ago that many museums banned photo-taking. And smartphones and tablets were disapproved of in classrooms. But technology is winning, and the institutions of learning and discovery are embracing screens. AR, with its ability to layer digital information on top of real-world objects, makes that learning more engaging. Of course, these ARtistic addenda don't pop out in the space in front of you; they're not volumetric, to borrow a term from VR. They appear as boring, flat web pages in your phone's browser. Using Google Lens in its current form in a museum, I discovered, requires a lot of looking up, looking down, looking up, looking down. AR isn't superimposing information atop the painting yet. Then again, Lens isn't just for museums; you can use it anywhere. Google's AR spans maps, menus, and foreign languages. And Google's object-recognition technology is so advanced, the thing you're scanning doesn't need a tag or QR code—it is the QR code. Your camera simply ingests the image and Google scans its own database to identify it. Apple, loath to be outdone by Google, has been hyping AR capabilities via the iPhone and iPad, though not directly in its camera. Instead, Apple has created ARKit, an augmented-reality platform for app makers who want to plug camera-powered intelligence into their own creations. The platform has turned into an early-stage playground for educational apps. Take Froggipedia, which lets teachers lead students through a frog dissection without having to explain the senseless death of the amphibian. Or Plantale, which allows a student to explore the vascular system of a plant by pointing their iPad camera at one. Katie Gardner, who teaches English as a second language at Knollwood Elementary in Salisbury, North Carolina, says her kindergarten students ‘just scream with excitement’ when they see their drawings come to life in the iPad app AR Makr. It takes a 2D drawing and renders it as a 3D object that can be placed in the physical world, as viewed through the iPad's camera. Gardner uses the app for story-retelling exercises: The kids listen to a tale like Sneezy the Snowman and then use AR Makr on their iPads to illustrate a snippet of the narrative. In the real classroom, there is nothing on the table in the corner. But when the kids point their iPads at the table, their creations appear on it. It's too early to say how well we learn things through augmented reality. AR lacks totality by definition—unlike VR, it enhances the real world but doesn't replace it—and it's hard to say what that means for memory retention, says Michael Tarr, a cognitive science researcher at Carnegie Mellon University. ‘There is a difference between the emotional and visceral responses that happen when something is experienced as a real event or thing and when something is experienced as a digital or pictorial implementation of a thing,’ he says."
+article1_array = article1.split()
+article2 = "Google is adding 3D augmented reality models to its search results — so you can check out a pair of shoes in the ‘real world’ while you’re shopping online or put an animated shark in your living room. The company showed off the technology at its I/O keynote, although we still don’t know how many searches will end up delivering AR results. At I/O, Google offered a few different examples of how its AR search options might work. If you search for musculature, for instance, you can get a model of human muscles — which you can either examine as an ordinary 3D object on your screen or overlay on a camera feed, letting you ‘see’ the object in the real world. If you’re looking at shopping results, you can preview a piece of clothing with your existing wardrobe. According to Cnet, 3D AR objects will start showing up in search results later this year, and developers can add support for their own objects by adding ‘just a few lines of code.’ It’s apparently already working with NASA, New Balance, Samsung, Target, Volvo, and other groups to add support for their 3D models. Google has been offering augmented reality tools for a couple of years now. It unveiled its Android ARCore platform in 2017, and it’s launched tools like the whimsical Playground system, which lets people place augmented reality stickers called Playmoji — including characters from The Avengers and Detective Pikachu — into their camera feed. Google also recently began testing turn-by-turn augmented reality directions for Google Maps, a feature it announced at last year’s I/O conference. And apps like Wayfair have let people use augmented reality to preview furniture. This is all part of a larger arms race toward sophisticated phone-based augmented reality: Facebook, for instance, announced an expansion of its Spark AR platform at last week’s F8 conference. Search AR seems like something that will be more fun than useful in many cases — but options like AR shopping could turn out to be genuinely helpful, and developers could end up finding new and surprising uses as the tech rolls out."
+data_x = []
+data_y = []
+<span class="highlight">data_y2 = []</span>
+
+for i in reversed(article1_array):
+  if ((len(i) &lt; 6) & (i != "AR")):
+	  article1_array.remove(i)
+
+count = Counter(article1_array)
+article1_frequentWords = count.most_common(10)
+
+for i in article1_frequentWords:
+  data_x.append(i[0])
+  data_y.append(i[1])
+  <span class="highlight">data_y2.append(article2.count(i[0]))</span>
+  
+x_pos = np.arange(len(data_x))
+<span class="highlight">plt.bar(x_pos-.2, data_y, width=.4)
+plt.bar(x_pos+.2, data_y2, width=.4)</span>
+plt.xticks(x_pos, data_x, rotation='vertical')
+plt.tight_layout()
+<span class="highlight">plt.legend(labels=['article1','article2'])</span>
+plt.show()   
+  </pre>
+  The result should look like this:<br>
+  <img src="https://cdn.glitch.com/904489f6-526c-4cd6-b049-60c2f0a1b12d%2FScreen%20Shot%202020-05-03%20at%204.05.31%20PM.png?v=1588543546671">
+
+<h3>You learned how to do some basic text analysis using Python!</h3>
+  To learn more about Python text analysis, check out 
+  <a href="https://www.geeksforgeeks.org/reading-writing-text-files-python/" target="_blank">this article</a> on reading and writing text files,
+  <a href="https://www.nltk.org/" target="_blank">Natural Language Tool Kit</a>, a platform for more complex text analysis;
+  <br>and also try using <a href="https://jupyter.org/" target="_blank">Jupyter Notebooks</a>, which provide more functionality than Trinket.
+
+
+  <button id="trinketButton" onclick="openTrinket()">Open Trinket</button>
+
+</body>
+
+
+
+<style>
+  body{
+    font-size:16px;
+    padding:2em;
+  }
+  h3{
+    background-color:whitesmoke;
+    padding:10px;
+  }
+  img{
+    width:400px;
+    border:3px solid grey;
+  }
+  .smallPic{
+    width:250px;
+    border:1px solid white;
+  }
+  .highlight{
+    background-color:yellow;
+  }
+  rslt{
+    font-family:monospace;
+    background-color: #a9e334;
+  }
+  textarea{
+    width: 800px;
+    height:200px;
+  }
+  #trinket{
+    border:3px solid grey;
+    width:400px;
+    height:450px;
+    position:fixed;
+    right:0px;
+    top:0px;
+    background-color:grey;
+  }
+  #trinketButton{
+    position:fixed;
+    top:0px;
+    display:none;
+  }
+  button{
+    background-color:yellow;
+    height:20px;
+    right:0px;
+  }
+</style>
+
+
+
+
+
+<script>
+  function closeTrinket(){
+    document.getElementById('trinket').style.display = "none";
+    document.getElementById('trinketButton').style.display = "block";
+  }
+  function openTrinket(){
+    document.getElementById('trinket').style.display = "block";
+    document.getElementById('trinketButton').style.display = "none";
+  }
+  
+  var trinketBig = false;
+  function resize(){
+    trinketBig = !trinketBig;
+    if(trinketBig){
+      document.getElementById('trinket').style.width = "100%";
+      document.getElementById('sizeButton').innerHTML = "Smaller";
+    }else{
+      document.getElementById('trinket').style.width = "400px";
+      document.getElementById('sizeButton').innerHTML = "Bigger";
+    }
+  }
+  
+  
+</script>
