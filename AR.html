@@ -1,0 +1,323 @@
+<head>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+
+<h1>Intoduction to Augmented Reality with AR.js and A-Frame</h1>
+Last Updated: May 4, 2020
+<br><br>
+This tutorial will teach you how to make a simple, marker-based AR application that looks like this:
+<br><br>
+<img src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2FScreen%20Shot%202020-05-05%20at%209.32.08%20AM.png?v=1588693051018">
+
+<h3>1) Print this hiro marker:</h3>
+<img class="marker" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fhiro.png?v=1588628238149">
+<br>It should be around 1 inch.<br>
+If you don't want to print it, you can display it on another screen.<br>
+
+  <!---------------------------------------->
+  
+<h3>2) Start a new Glitch project</h3>
+  2.1) Go to <a href="https://glitch.com">glitch.com</a>.<br><br>
+  2.2) Click on "New Project" and "hello-webpage".<br><br>
+  2.3) In the box on the left, delete all of the files except index.html and assets.<br><br>
+  2.4) Delete all of the text in the index.html file. We want to start from scratch.<br><br>
+
+  <!----------------------------------------->
+
+<h3>3) Add head and body tags</h3>
+  In index.html, open and close head tags and body tags by writing the following:
+  <pre class="prettyprint">
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+  </pre>
+  
+<!----------------------------------------->
+  
+<h3>4) Add links to AR.js and A-Frame</h3>
+  Between the head tags, add links to a-frame and ar.js:
+  <pre class="prettyprint">
+&lt;head&gt;
+  <span class="hlt">&lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;</span>
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;/body&gt;
+  </pre>
+  
+<!---------------------------------------->
+  
+  
+<h3>5) Start an A-Frame scene</h3>
+5.1) Inside the body tags, add a-scene tags:
+<pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  <span class="hlt">&lt;a-scene&gt;
+  &lt;/a-scene&gt;</span>
+&lt;/body&gt;
+  </pre>
+  
+5.2) Inside the a-scene tags, add a-asset tags:
+<pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  <span class="hlt">&lt;a-assets&gt;
+  &lt;/a-assets&gt;</span>
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  
+  <!-------------------------------->
+
+<h3>6) Add marker tags</h3>
+  Below the a-assets tags, add marker tags for a hiro marker:
+<pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+  &lt;/a-assets&gt;
+  
+  <span class="hlt">&lt;a-marker preset="hiro"&gt;
+  &lt;/a-marker&gt;</span>
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  
+  <!--------------------------------->
+  
+  <h3>7) Add a shape to the marker</h3>
+  7.1) Inside the a-marker tags, add a-box tags:
+<pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    <span class="hlt">&lt;a-box color="red"&gt;&lt;/a-box&gt;</span>
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  7.2) Run your glitch app by clicking on "show" in the upper left and "in a new window".<br><br>
+  7.3) You can also try it out on your phone by going to the url of your glitch project in your phone's browser.<br><br>
+  7.4) If necessary, give the site permission to access to your camera.<br><br>
+  7.5) Hold your printed marker up to the camera. On your screen, you should see a red cube floating near the marker, like this:
+  <br><br>
+  <img src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2FScreen%20Shot%202020-05-05%20at%209.33.44%20AM.png?v=1588693030159">
+  
+  <!------------------------------>
+  
+  <h3>8) Turn the cube into a globe</h3>
+  
+  8.1) Change the a-cube to an a-sphere and remove the color:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    <span class="hlt">&lt;a-sphere&gt;&lt;/a-sphere&gt;</span>
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  
+  8.2) Go to the assets folder on the left and upload an equirectangulal image like this one:
+  <br><br>
+  <img style="width:700px; border:1px solid white;" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fglobe.jpg?v=1588643356276">
+  <br><br>
+  
+  8.3) Go back to index.html and add an image tag between the a-assets tags, leaving the image source blank: 
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+    <span class="hlt">&lt;img id="moon" src=""&gt;</span>
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    &lt;a-sphere&gt;&lt;/a-sphere&gt;
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+
+  8.4) Go back to the assets folder, click on your image, and copy the url. 
+  Then go back to index.html and paste the url between the quotation marks in src="":
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+    <span class="hlt">&lt;img id="moon" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fglobe.jpg?v=1588643356276"&gt;</span>
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    &lt;a-sphere&gt;&lt;/a-sphere&gt;
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  
+  8.5) Add the image to your sphere as a material:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+    &lt;img id="moon" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fglobe.jpg?v=1588643356276"&gt;
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    &lt;a-sphere <span class="hlt">material="src:#moon"</span>&gt;&lt;/a-sphere&gt;
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  Your project should now look like this:
+  <br><br>
+  <img src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2FScreen%20Shot%202020-05-05%20at%209.34.51%20AM.png?v=1588693027803">
+  
+  <!--------------------------------->
+  
+  <h3>9) Change the scale, rotation, and position of your sphere:</h3>
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+    &lt;img id="moon" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fglobe.jpg?v=1588643356276"&gt;
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    &lt;a-sphere material="src:#moon" <span class="hlt">scale="2 2 2" rotation="0 90 90" position="0 1 0"</span>&gt;&lt;/a-sphere&gt;
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  Your project should now look like this:<br>
+  <img src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2FScreen%20Shot%202020-05-05%20at%209.32.08%20AM.png?v=1588693051018">
+  <br><br>
+  
+  <!----------------------------------->
+  
+  10) Make your globe spin
+  10.1) Inside the opening a-sphere tag, add an animation for the sphere's rotation:
+  <pre class="prettyprint">
+&lt;head&gt;
+  &lt;script src="https://aframe.io/releases/1.0.2/aframe.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;a-scene&gt;
+  &lt;a-assets&gt;
+    &lt;img id="moon" src="https://cdn.glitch.com/583c53d8-129b-4cee-b167-34bc3d11db85%2Fglobe.jpg?v=1588643356276"&gt;
+  &lt;/a-assets&gt;
+  
+  &lt;a-marker preset="hiro"&gt;
+    &lt;a-sphere material="src:#moon" scale="2 2 2" rotation="0 90 90" position="0 1 0" 
+      <span class="hlt">animation="property:rotation; from:0 90 90; to:360 90 90; dur:3000; easing:linear; loop:true;"</span>
+    &gt;&lt;/a-sphere&gt;
+  &lt;/a-marker&gt;
+  
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+  </pre>
+  Now, when you look at your project, the globe should be spinnng.<br><br>
+  10.2) Try changing the "to" and "from" values for the rotation, and the dur (duration), easing, and loop values to see what happens.
+  10.3) Try animating other properties, like scale and position.
+  
+  <!---------------------------->
+  
+  <h3>You learned how to make an AR app!</h3>
+  If you want to add different markers, try using <a href="https://au.gmented.com/app/marker/marker.php">this marker generator</a>.
+  <br>To learn more about A-Frame for AR, check out <a href="https://aframe.io/blog/webxr-ar-module/">this blog post</a>.
+ 
+</body>
+
+
+
+
+
+<style>
+  .marker{
+    width:100px;
+    height:100px;
+    margin:20px;
+    border:1px solid white;
+  }
+  body{
+    font-size:16px;
+    padding:2em;
+  }
+  h3{
+    background-color:whitesmoke;
+    padding:10px;
+  }
+  img{
+    width:30%;
+    border:3px solid grey;
+  }
+  .largePic{
+    width:50%;
+  }
+  .hlt{
+    background-color:yellow;
+  }
+</style>
