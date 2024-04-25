@@ -1,4 +1,4 @@
-##CRDDS Learning Resources##
+# CRDDS Learning Resources
 
 [Introduction to Augmented Reality with AR.js and A-Frame](AR.html)
 
